@@ -1,0 +1,24 @@
+<div class="buying-product-container">
+    <table>
+        <tr>
+            <th class="col1"> Photo </th>
+            <th class="col2"> Description </th>
+            <th class="col3"> Price </th>
+            <th class="col4"> Quantity</th>
+            <th class="col5"> </th>
+        </tr>
+
+        <tr>
+            <td> <img class="product-image-advanced" ng-src="{{info.icon}}"> </td>
+            <td class="selected-text"> {{info.description}}</td>
+            <td class="selected-text" id="price"> {{info.price}}$</td>
+            <td class="selected-text" id="quantity" ng-bind="quantity"></td>
+            <td class="selected-text" id="qItems">
+                <img class="quantityItem" src="img/+.png" ng-click="addOne()" >
+                <img class="quantityItem" src="img/-.jpg" ng-click="removeOne()">
+            </td>
+        </tr>
+
+    </table>
+
+</div>

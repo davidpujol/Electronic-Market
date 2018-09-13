@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Electronic Market</title>
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Include the angularJs library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+
+    <script type="text/javascript">
+        var continueShopping = function() {
+            localStorage.number = sessionStorage.number;    //save old number
+            localStorage.setItem('products', sessionStorage.getItem('products'));
+            localStorage.totalAmount = sessionStorage.totalAmount;
+            localStorage.quantities = sessionStorage.quantities;
+        }
+
+    </script>
+
+</head>
+<body ng-app="ElectronicMarket">
+    <div>
+        <a href="index.html"><h1>ELECTRONIC MARKET</h1></a>
+        <button class="buying-button"> <img class="image-carrito2" src="img/carrito-compra2.png"> Shopping car
+            (<span id="number"></span>) </button>
+    </div>
+
+    <div class="container-selected" ng-controller="selected-products">
+        <h3 class="title-selected"> Your selected products:</h3>
+        <div class="buying-product" data-ng-repeat="product in productList">
+            <shopping-products info="product"></shopping-products>
+        </div>
+
+    </div>
+
+    <h4 class="totalAmount"> Total amount: <span id="amountVal"></span>$</h4>
+
+    <div class="buttons">
+        <a href="index.html" onclick="continueShopping()"><button class="continue-shopping-button"> Continue shopping</button> </a>
+        <a href="index3.html"><button class="checkout-button"> Proceed to checkout </button></a>
+    </div>
+    <br> <br><br>
+
+    <write-footer> </write-footer>
+
+
+
+    <script type="text/javascript">
+        document.getElementById("amountVal").innerHTML = sessionStorage.totalAmount;
+        document.getElementById("number").innerHTML = sessionStorage.number;
+    </script>
+
+
+
+
+    <!-- Include new modules -->
+    <script src="app.js"></script>
+
+    <!-- Include new controllers -->
+    <script src="js/controller/controllerSelectedProducts.js"></script>
+
+    <!-- Include new directives -->
+    <script src="js/directives/shoppingProducts.js"></script>
+    <script src="js/directives/writeFooter.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<h3 class="product-title"> {{info.name}}</h3>
+<img class="image-carrito" ng-click="addShoppingCar()" src="img/carrito-compra.png">
+<div class="image-container">
+    <center> <img class="product-image" ng-src="{{info.icon}}"> </center>
+</div>
+
+<p class="product-price"> <strong> Price:</strong> {{info.price}}$</p>
+<span class="product-d" ng-click="show = !show"> Description: </span>
+<span class="product-description" ng-show="show"> {{info.description}} </span>
+<span class="product-description" ng-hide="show"> + </span>

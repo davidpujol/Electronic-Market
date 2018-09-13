@@ -1,0 +1,30 @@
+<br>
+<h3 class="title-checkout"> Fill your personal information:</h3>
+
+<form class="shoppingForm" action="../../shoppingForm.php" method="post">
+    <p> First Name <input type="text" name="firstName" id="firstName"required></p>
+    <p> Last Name <input type="text" name="lastName" id="lastName"required></p>
+    <p> Telephone number <input type="tel" name="tel" id="tel"></p>
+    <p> Email address <input type="email" name="email" id="email" required></p>
+    <p> Confirmation of email <input type="email" name="email2" id="email2" required></p>
+
+    <p> Type of payment
+        <select id="typePayment" ng-click="update()" >
+            <option value="CreditCard">Credit Card</option>
+            <option value="BankTransfer">Bank transfer</option>
+            <option value="COD">C.O.D</option>
+        </select>
+    </p>
+
+    <p ng-show="isCreditCard"> Credit Card number <input type="text" name="cardNumber" required></p>
+    <p ng-show="isCreditCard"> CVS <input type="text" name="CVS" required></p>
+    <p ng-show="isCreditCard"> Expiration date <input type="month" name="expirationDate" required></p>
+    <p ng-show="isBankTransfer"> Account number <input type="text" name="accountNumber" required></p>
+
+    <input type="submit" value="Submit" ng-click="check()">
+
+</form>
+
+    <img class="card1" src="img/targetas1.jpg">
+    <img class="card2" src="img/targetas2.png">
+    <img class="card3" src="img/targetas3.jpg">
